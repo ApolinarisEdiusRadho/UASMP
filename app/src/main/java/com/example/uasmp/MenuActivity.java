@@ -13,8 +13,7 @@ import android.widget.ImageView;
 
 
 public class MenuActivity extends AppCompatActivity {
-    private CardView btnprofil, btnkeluar, btnbuku, btnpinjam;
-
+    private CardView btnprofil, btnkeluar, btnbuku, btnpinjam, btnsaya;
 //    ImageView btnprofil, btnkeluar, btnbuku, btnpinjam;
     SharedPreference sp;
     Activity context = this;
@@ -30,6 +29,7 @@ public class MenuActivity extends AppCompatActivity {
         btnkeluar = (CardView) findViewById(R.id.btnkeluar);
         btnbuku = (CardView) findViewById(R.id.btnbuku);
         btnpinjam = (CardView) findViewById(R.id.btnpinjam);
+        btnsaya = (CardView)  findViewById(R.id.btnsaya);
 
         sp = new SharedPreference();
 
@@ -62,6 +62,14 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View arg0) {
                 sp.clearSharedPreference(context);
                 finish();
+            }
+        });
+
+        btnsaya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(MenuActivity.this,TentangSaya.class);
+                startActivity(intent);
             }
         });
     }

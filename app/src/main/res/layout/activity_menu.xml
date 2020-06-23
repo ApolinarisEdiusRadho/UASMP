@@ -156,7 +156,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnkeluar"
+            android:id="@+id/btnsaya"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:layout_width="150dp"
@@ -207,7 +207,7 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnprofill"
+            android:id="@+id/btnkeluar"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:layout_width="330dp"
