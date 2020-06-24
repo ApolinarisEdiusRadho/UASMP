@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toolbar;
 
@@ -23,6 +24,7 @@ public class DataBuku extends AppCompatActivity {
     ListView ListView01;
     sql dbHelper;
     Menu menu;
+    ImageView btnkembali;
     protected Cursor cursor;
     public static DataBuku bd;
 
@@ -36,6 +38,15 @@ public class DataBuku extends AppCompatActivity {
         bd = this;
         dbHelper = new sql(this);
         RefreshList();
+
+        btnkembali = (ImageView) findViewById(R.id.btnkembali);
+        btnkembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(DataBuku.this,MenuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void RefreshList() {
@@ -117,4 +128,5 @@ public class DataBuku extends AppCompatActivity {
         }
         return false;
     }
+
 }

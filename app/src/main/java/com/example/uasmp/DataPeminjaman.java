@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 public class DataPeminjaman extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class DataPeminjaman extends AppCompatActivity {
     protected Cursor cursor;
     public static DataPeminjaman bd;
     Menu menu;
+    ImageView btnkembali;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,17 @@ public class DataPeminjaman extends AppCompatActivity {
         bd = this;
         dbHelper = new sqlpinjam(this);
         RefreshList();
+
+        btnkembali = (ImageView) findViewById(R.id.btnkembali);
+
+        btnkembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(DataPeminjaman.this,MenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

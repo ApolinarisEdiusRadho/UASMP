@@ -61,7 +61,8 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 sp.clearSharedPreference(context);
-                finish();
+                Intent intent = new Intent(MenuActivity.this,MainActivity.class);
+                startActivity(intent);;
             }
         });
 
